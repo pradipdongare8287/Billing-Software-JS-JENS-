@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShop Billing Software</title>
+    <link rel="stylesheet" href="/Software.css">
+</head>
+<body>
+
+<header class="header no-print">
+    <h2>🛒 JSJens <span>Billing</span></h2>
+    <p>Simple Billing Management System</p>
+</header>
+
+<main class="container">
+
+    <section class="form-card no-print">
+        <h2>Add Product</h2>
+
+        <form id="productForm">
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" id="productName"
+                       placeholder="Enter product name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Amount / Rate (₹)</label>
+                <input type="tel" id="productRate"
+                       placeholder="Enter rate" min="0.01"
+                       step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" id="productQty"
+                       placeholder="Enter quantity" min="1"
+                       step="1" value="1" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                + Add Product
+            </button>
+        </form>
+    </section>
+
+    
+<section class="bill-card">
+
+    <!-- Shop Header -->
+    <div class="shop-header">
+        <h1>Js Jeans</h1>
+        <p>All Types of Products Available Here</p>
+        <p>Main Road, Jamkhed, Maharashtra</p>
+        <p>Mobile: +91 9876543210</p>
+        <p>GSTIN: 27XXXXXXXXXX1Z5</p>
+    </div>
+
+    <div class="invoice-title">
+        <h2>TAX INVOICE / CASH BILL</h2>
+        <span>Original for Customer</span>
+    </div>
+
+    <!-- Invoice Information -->
+    <div class="invoice-info">
+        <div>
+            <p><strong>Invoice No:</strong> INV-001</p>
+            <p><strong>Date:</strong> <span id="billDate"></span></p>
+        </div>
+
+        <div>
+            <p><strong>Payment:</strong> Cash</p>
+            <p><strong>Status:</strong> Paid</p>
+        </div>
+    </div>
+
+    <!-- Customer Details -->
+    <!-- <div class="customer-info">
+        <h3>Customer Details</h3>
+
+        <div class="customer-grid">
+            <div>
+                <label>Customer Name</label>
+                <input type="text" id="customerName"
+                       placeholder="Enter customer name">
+            </div>
+
+            <div>
+                <label>Mobile Number</label>
+                <input type="tel" id="customerMobile"
+                       placeholder="Enter mobile number">
+            </div>
+
+            <div>
+                <label>Address</label>
+                <input type="text" id="customerAddress"
+                       placeholder="Enter address">
+            </div>
+            <div>
+                <label>Branch</label>
+                <input type="text" id="Branch"
+                       placeholder="Enter Branch">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Product Table -->
+    <div class="table-wrapper">
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Sr.</th>
+                    <th>Product Description</th>
+                    <th>Rate (₹)</th>
+                    <th>Qty</th>
+                    <th>Amount (₹)</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="billItems">
+                <tr>
+                    <td colspan="6" class="empty">
+                        No products added yet.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bill Calculation -->
+   
+<div class="totals-box">
+
+    <h3>Product Billing</h3>
+
+    <div class="table-wrapper">
+        <table class="billing-table">
+          
+
+            <!-- <tbody id="billItems">
+             Product add केल्यावर इथे rows येतील -->
+            <!-- </tbody> -->
+
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Amount</td>
+                    <td id="grandTotal">₹ 0.00</td>
+                    <td class="no-print"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+
+    <!-- Payment and Footer -->
+    <div class="payment-info">
+        <div>
+            <h3>Payment Information</h3>
+            <p>Payment Mode: Cash / UPI</p>
+            <p>Thank you for your purchase!</p>
+        </div>
+
+        <div class="signature">
+            <p>For MY SHOP</p>
+            <br><br>
+            <p>Authorized Signature</p>
+        </div>
+    </div>
+
+    <div class="invoice-footer">
+        <p>Goods once sold will be subject to shop policy.</p>
+        <strong>Thank You! Visit Again.</strong>
+    </div>
+
+    <!-- Buttons -->
+    <div class="bill-actions no-print">
+        <button type="button" class="btn btn-success"
+                id="printBtn">🖨 Print Bill</button>
+
+        <button type="button" class="btn btn-secondary"
+                id="resetBtn">↻ New Bill</button>
+
+        <button type="button" class="btn btn-danger"
+                id="clearBtn">Clear Products</button>
+    </div>
+
+</section>
+
+
+</main>
+
+<footer class="footer no-print">
+    Js Jens Billing Software Made By Pradip Dongare All Copy Rights Reserved © 2026
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
