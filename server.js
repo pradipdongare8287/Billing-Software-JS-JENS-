@@ -6,10 +6,10 @@ const mysql = require('mysql2')
 const util = require('util')
 
 var database = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'root',
-    database:'js_jens_bank'
+    host:'bwew1zj0knak8simqote-mysql.services.clever-cloud.com',
+    user:'u1ix698h48g9fyw7',
+    password:'7eXbbU7vO8X8ZXzR8jHH',
+    database:'bwew1zj0knak8simqote'
 })
 
 const query = util.promisify(database.query).bind(database)
